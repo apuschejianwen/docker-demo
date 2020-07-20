@@ -1,5 +1,5 @@
 FROM myjdk:1
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
+WORKDIR /usr/local
+COPY target/docker-demo.jar /usr/local/app.jar
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app.jar"]
