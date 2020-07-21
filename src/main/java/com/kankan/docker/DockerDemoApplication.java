@@ -25,12 +25,13 @@ public class DockerDemoApplication {
 
     @RequestMapping("/pressure")
     public String hello2() {
-        double radom = Math.random() * 100000;
+        double random = Math.random() * 100000000;
         long result = 0L;
-        for (int i = 0; i < (int) radom; i ++) {
+        for (int i = 0; i < (int) random; i ++) {
             result += i;
         }
-        logger.info("random is :{}, result is:{}", radom, result);
-        return "hello2";
+        logger.info("random is :{}, result is:{}", random, result);
+        return "random:" + random + ", result:" + result;
     }
+
 }
