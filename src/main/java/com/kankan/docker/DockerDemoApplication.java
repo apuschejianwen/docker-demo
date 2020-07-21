@@ -24,14 +24,10 @@ public class DockerDemoApplication {
     }
 
     @RequestMapping("/pressure")
-    public String hello2() {
-        double random = Math.random() * 100000000;
-        long result = 0L;
-        for (int i = 0; i < (int) random; i ++) {
-            result += i;
-        }
-        logger.info("random is :{}, result is:{}", random, result);
-        return "random:" + random + ", result:" + result;
+    public String pressure() {
+        Thread thread = new Thread(new DemoThread());
+        thread.start();
+        return thread.getName();
     }
 
 }
