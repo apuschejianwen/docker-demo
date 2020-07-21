@@ -1,4 +1,4 @@
-FROM myjdk:1
+FROM myjdk:2.0.0
 WORKDIR /usr/local
 COPY target/docker-demo.jar /usr/local/app.jar
 EXPOSE 8080
