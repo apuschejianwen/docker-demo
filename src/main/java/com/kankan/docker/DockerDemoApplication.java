@@ -20,7 +20,13 @@ public class DockerDemoApplication {
     @RequestMapping("/hello/docker")
     public String hello() {
         logger.info("hello/docker log");
-        return "hello";
+        return "hello new";
+    }
+
+    @RequestMapping("/hello3/docker")
+    public String hello3() {
+        logger.info("hello/docker log");
+        return "hello3";
     }
 
     @RequestMapping("/pressure")
