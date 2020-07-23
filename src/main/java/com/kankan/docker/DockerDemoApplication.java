@@ -17,23 +17,36 @@ public class DockerDemoApplication {
         SpringApplication.run(DockerDemoApplication.class, args);
     }
 
-    @RequestMapping("/hello/docker")
+    @RequestMapping("/hello")
     public String hello() {
-        logger.info("hello/docker log");
-        return "hello new";
+        logger.info("hello log");
+        /**
+         * 项目1.0.0版本（镜像1.0.0）返回 hello1
+         * 项目2.0.0版本（镜像2.0.0）返回 hello2
+         * 项目3.0.0版本（镜像3.0.0）返回 hello3
+         */
+        return "hello1";
     }
 
-    @RequestMapping("/hello3/docker")
-    public String hello3() {
-        logger.info("hello/docker log");
-        return "hello3";
-    }
-
+    /**
+     * 开启压测
+     *
+     * @return
+     */
     @RequestMapping("/pressure")
     public String pressure() {
+        DemoThread.run = true;
         Thread thread = new Thread(new DemoThread());
         thread.start();
         return thread.getName();
+    }
+
+    /**
+     * 停止压测
+     */
+    @RequestMapping("/stopPressure")
+    public void stopPressure() {
+        DemoThread.run = false;
     }
 
 }
