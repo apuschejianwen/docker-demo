@@ -1,0 +1,21 @@
+spring:
+  application:
+    group: docker.demo.cloud.acm
+    name: docker-demo
+
+alibaba:
+  acm:
+    endpoint: acm.aliyun.com
+    namespace: 5c2606d8-a08b-4d57-b60c-55bab257f89d
+    accessKey: LTAI4G2VDjHdQVf5eT13phee
+    secretKey: XZp3z3CHd7F5Izp0aOo5ogorFRK9aY
+    # 如果 Group 不是 DEFAULT_GROUP，则需设置 alibaba.acm.group
+    group: DEFAULT_GROUP
+    # 如果是加密配置，则添加下面两行进行自动解密。regionId 可以通过命名空间详情中的区域 ID 获取
+    #openKMSFilter:
+    #regionId:
+    #如果 file-extension 不是 properties，则需设置 alibaba.acm.file-extension，可选值包括 properties、yaml、yml，默认为 properties (版本 1.0.8 以上支持更改此配置)
+    file-extension: yaml
+
+user:
+  aaa: 111
