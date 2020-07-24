@@ -19,13 +19,13 @@ public class DockerDemoApplication {
 
     @RequestMapping("/hello")
     public String hello() {
-        logger.info("hello2 log");
+        logger.info("hello1 log");
         /**
          * 项目1.0.0版本（镜像1.0.0）返回 hello1
          * 项目2.0.0版本（镜像2.0.0）返回 hello2
          * 项目3.0.0版本（镜像3.0.0）返回 hello3
          */
-        return "hello2";
+        return "hello1";
     }
 
     /**
